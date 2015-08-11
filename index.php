@@ -6,7 +6,7 @@
     ?>
 </head>
 <body>
-<form action="login.php" method="post">
+<form action=/php/login.php method="post">
     User Name: <input type="text" name="name"><br>
     <? echo $err_username; //error username invalid?>
     Password: <input type="password" name="password"><br>
