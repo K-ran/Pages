@@ -1,0 +1,11 @@
+Rule for php
+
+Classes.
+1)All the class names should start with capital letter and camel case
+2)All data members should be small caps. User _ to seperate words
+3)All member functions should be small caps. User _ to seperate words
+4)File name should be same as class name.
+5)Keep all the classes in  /php/classes
+
+
+NOTICE: ENTER MORE STANDARDS AS YOU CAM ACROSS NEW THINGS

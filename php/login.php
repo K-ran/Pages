@@ -1,6 +1,10 @@
 <?
     //  This is the login page, all the from validation and verification takes
     //  place here.  Page loads when the user submits the ligin form form.
+
+    require("./classes/UserClass.php");
+    require("./redirect_header.php");  //redirect id already logged in;
+
     $servername = "127.0.0.1";
     $username = "pagesuser";
     $password = "password";
@@ -27,16 +31,25 @@
           }
 
         //Checking from database if Username/Password pair exists.
-        $sql = "SELECT * FROM users where USER_NAME='$db_name' and PASSWORD='$db_pass'";
+        $sql = "SELECT * FROM users where user_name='$db_name' and password='$db_pass'";
         if ($result = $mysqli->query($sql)) {
             if ($row=$result->fetch_assoc()) {
-                echo "Welcome ".$row['FIRST_NAME'];
+                //start the session
+                //make a session variable stiring a UserClass instance
+                //with all the user information.
+                session_start();
+                $_SESSION['user']=new UserClass();
+                $_SESSION['user']->load_info_from_db($row);
             }
             else {
+                echo $row;
                 echo "Username / Password incorrect";
             }
             $result->close();
         }
       }
     $mysqli->close();
+
+    //if session is set, re direst to homepage;
+    require("./redirect_header.php");
 ?>
