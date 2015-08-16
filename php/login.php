@@ -9,9 +9,6 @@
     $username = "pagesuser";
     $password = "password";
 
-    $db_name="";
-    $db_pass="";
-
     // Create connection
     $mysqli = new mysqli($servername, $username, $password,'ProjectPages');
 
