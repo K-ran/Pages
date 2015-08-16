@@ -1,7 +1,6 @@
 <html>
 <head>
     <?
-	//hi this is kartik
         require("./php/redirect_header.php");
         $err_username="";
         $err_password="";
