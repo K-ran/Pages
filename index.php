@@ -1,13 +1,18 @@
 <html>
 <head>
     <?
+        session_start();
         require("./php/redirect_header.php");
+        if(isset($_SESSION['user'])){
+            echo "Please wait";
+            header("Location: ./home.php");
+        }
         $err_username="";
         $err_password="";
     ?>
 </head>
 <body>
-<form action=/php/login.php method="post">
+<form action=./login.php method="post">
     User Name: <input type="text" name="name"><br>
     <? echo isset($_POST["err_name"])? "This field is required" : "";?>
     Password: <input type="password" name="password"><br>
