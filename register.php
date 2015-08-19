@@ -2,7 +2,7 @@
     /*
     *   This file contains the php script for registration process
     */
-
+    require("./redirect_header.php");
     $servername = "127.0.0.1";
     $username = "pagesuser";
     $password = "password";

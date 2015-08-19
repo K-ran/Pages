@@ -1,9 +1,10 @@
 <?
     //  This is the login page, all the from validation and verification takes
     //  place here.  Page loads when the user submits the ligin form form.
-
-    require("./classes/UserClass.php");
-    require("./redirect_header.php");  //redirect id already logged in;
+    session_start();
+    require("./redirect_header.php");
+    require("./php/classes/UserClass.php");
+    //redirect id already logged in;
 
     $servername = "127.0.0.1";
     $username = "pagesuser";
@@ -34,19 +35,15 @@
                 //start the session
                 //make a session variable stiring a UserClass instance
                 //with all the user information.
-                session_start();
                 $_SESSION['user']=new UserClass();
                 $_SESSION['user']->load_info_from_db($row);
             }
             else {
-                echo $row;
                 echo "Username / Password incorrect";
             }
             $result->close();
         }
       }
     $mysqli->close();
-
-    //if session is set, re direst to homepage;
     require("./redirect_header.php");
 ?>
