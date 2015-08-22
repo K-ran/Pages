@@ -2,13 +2,9 @@
 <head>
     <?
         session_start();
-        require("./php/redirect_header.php");
-        if(isset($_SESSION['user'])){
-            echo "Please wait";
+        if (isset($_SESSION['user'])){
             header("Location: ./home.php");
         }
-        $err_username="";
-        $err_password="";
     ?>
 </head>
 <body>

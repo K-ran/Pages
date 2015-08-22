@@ -2,7 +2,6 @@
     //  This is the login page, all the from validation and verification takes
     //  place here.  Page loads when the user submits the ligin form form.
     session_start();
-    require("./redirect_header.php");
     require("./php/classes/UserClass.php");
     //redirect id already logged in;
 
