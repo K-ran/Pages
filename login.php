@@ -34,6 +34,7 @@
           echo check_input($db_name);
 
           if(!check_input($db_name)){
+              $_SESSION["err_name"]="No special chracters allowed";
               header("Location: ./index.php");
               die("special character");
           }

@@ -13,9 +13,8 @@
         $string = initial_filter($string);
         if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $string))
             {
-                $_SESSION["err_name"]="No special chracters allowed";
                 return false;
             }
-        return true;    
+        return true;
     }
 ?>
