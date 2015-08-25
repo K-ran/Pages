@@ -29,39 +29,65 @@
           $cnf_password=initial_filter($_POST['confirm_password']);
           $email=initial_filter($_POST['email']);
 
-          $error=false;
-          if(!check_input($user_name)){
+          $error=flase;
+          if(empty($user_name)){
               $error=true;
-              $_SESSION["err_uname"]=ERR_SPECIAL_CHARACTER;
+              $_SESSION["err_uname"]=ERR_EMPTY_INPUT;
           }
-          if(!check_input($first_name)){
-              $error=true;
-              $_SESSION["err_fname"]=ERR_SPECIAL_CHARACTER;
-          }
-          if(!check_input($last_name)){
-              $error=true;
-              $_SESSION["err_lname"]=ERR_SPECIAL_CHARACTER;
+          else if(!ctype_alnum($user_name)){
+                $error=true;
+                 $_SESSION["err_uname"]=ERR_ONLY_ALPHANUM;
           }
 
-          if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+          if(empty($first_name)){
+              $error=true;
+              $_SESSION["err_fname"]=ERR_EMPTY_INPUT;
+          }
+          else if(!ctype_alpha($first_name)){
+                $error=true;
+                 $_SESSION["err_fname"]=ERR_ONLY_ALPHA;
+          }
+
+          if(empty($last_name)){
+              $error=true;
+              $_SESSION["err_lname"]=ERR_EMPTY_INPUT;
+          }
+          else if(!ctype_alpha($last_name)){
+                $error=true;
+                $_SESSION["err_lname"]=ERR_ONLY_ALPHA;
+          }
+
+          if(empty($email)){
+              $error=true;
+              $_SESSION["err_email"]=ERR_EMPTY_INPUT;
+          }
+          else if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
               $error=true;
               $_SESSION["err_email"]="Invalid Email Address";
           }
-
-          if(!check_input($password)){
+          if(empty($password)){
               $error=true;
-              $_SESSION["err_fname"]=ERR_SPECIAL_CHARACTER;
+              $_SESSION["err_password"]=ERR_EMPTY_INPUT;
           }
+          else if(!check_input($password)){
+              $error=true;
+              $_SESSION["err_password"]=ERR_SPECIAL_CHARACTER;
+          }
+          else if(strlen($password)<8){
+              $error=true;
+              $_SESSION["err_password"]=ERR_PASSWORD_SIZE;
+          }
+
           if(strcmp($password,$cnf_password)!=0){
               $error=true;
               $_SESSION["err_cnf_password"]="password dint match";
           }
 
-          if($error){
-              header("Location: ./registration_form.php");
-              die();
-          }
 
+          if($error===true){
+              header("Location: ./registration_form.php");
+              die("boom");
+          }
         $sql = "Insert into users (user_name,first_name,last_name,password,email) values
         (
             '$user_name',

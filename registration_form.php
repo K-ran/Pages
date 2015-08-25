@@ -12,17 +12,17 @@
 <body>
 <form action="./register.php" method="post">
     First Name: <input type="text" name="first_name"><br>
-    <? echo isset($_SESSION["err_fname"])? $_SESSION["err_fname"]: "";?>
+    <? if(isset($_SESSION["err_fname"])) echo $_SESSION["err_fname"]; ?>
     Last Name: <input type="text" name="last_name"><br>
-    <? echo isset($_SESSION["err_lname"]) ? $_SESSION["err_lname"] : ""; ?>
+    <? if(isset($_SESSION["err_lname"])) echo $_SESSION["err_lname"]; ?>
     User Name: <input type="text" name="user_name"><br>
-    <? echo isset($_SESSION["err_uname"]) ? $_SESSION["err_uname"] : "";?>
+    <? if(isset($_SESSION["err_uname"])) echo $_SESSION["err_uname"]; ?>
     Email: <input type="text" name="email"><br>
-    <? echo isset($_SESSION["err_email"]) ? $_SESSION["err_email"] : "";?>
+    <? if(isset($_SESSION["err_email"])) echo $_SESSION["err_email"]; ?>
     Password: <input type="password" name="password"><br>
-    <? echo isset($_SESSION["err_password"]) ? $_SESSION["err_password"] : "";?>
+    <? if(isset($_SESSION["err_password"])) echo $_SESSION["err_password"]; ?>
     Confirm Password: <input type="password" name="confirm_password"><br>
-    <? echo isset($_SESSION["err_cnf_password"]) ? $_SESSION["err_cnf_password"] : "";?>
+    <? if(isset($_SESSION["err_cnf_password"])) echo $_SESSION["err_cnf_password"]; ?>
     <input type="submit">
     <?
     //Todo: Add cleanup for the $_Post error messages
@@ -30,7 +30,6 @@
 </form>
 
 <?
-    //unsetting error sesion variables;
     unset($_SESSION["err_uname"],
           $_SESSION["err_lname"],
           $_SESSION["err_fname"],
