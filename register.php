@@ -6,9 +6,10 @@
     require("./php/functions/validations.php");
     require("./php/constants.php");
     session_start();
-    $servername = "127.0.0.1";
-    $username = "pagesuser";
-    $password = "password";
+
+    $servername = SERVERIP;
+    $username = USER;
+    $password = PASSWORD;
 
     // Create connection
     $mysqli = new mysqli($servername, $username, $password,'ProjectPages');
@@ -29,7 +30,7 @@
           $cnf_password=initial_filter($_POST['confirm_password']);
           $email=initial_filter($_POST['email']);
 
-          $error=flase;
+          $error=false;
           if(empty($user_name)){
               $error=true;
               $_SESSION["err_uname"]=ERR_EMPTY_INPUT;

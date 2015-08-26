@@ -9,4 +9,7 @@
     define("ERR_ONLY_ALPHA","Only alphabets allowed");
     define("ERR_ONLY_ALPHANUM","Only Alpha Numeric Allower");
     define("ERR_PASSWORD_SIZE","Password should be grater than 8 characters");
+    define("SERVERIP","127.0.0.1");
+    define("USER","pagesuser");
+    define("PASSWORD","password");
 ?>

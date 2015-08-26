@@ -4,11 +4,12 @@
     session_start();
     require("./php/classes/UserClass.php");
     require("./php/functions/validations.php");
+    require("./php/constants.php");
     //redirect id already logged in;
 
-    $servername = "127.0.0.1";
-    $username = "pagesuser";
-    $password = "password";
+    $servername = SERVERIP;
+    $username = USER;
+    $password = PASSWORD;
 
     // Create connection
     $mysqli = new mysqli($servername, $username, $password,'ProjectPages');
