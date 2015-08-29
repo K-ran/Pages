@@ -1,0 +1,85 @@
+body
+{
+	background: -webkit-linear-gradient(#9999FF, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#9999FF, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#9999FF, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#9999FF, white); /* Standard syntax */
+	background-attachment: fixed;
+}
+div.box
+{
+	position: relative;
+    margin: auto;
+	top:100px;
+	border: 2px solid black;
+	border-radius: 25px;
+    background:#7B68EE;
+	opacity:0.65;
+    padding: 20px; 
+    width: 600px;
+    height: auto;
+	box-shadow: 2px 2px 3px black;
+}
+h1
+{
+	text-align: center;
+	color: white;
+	font-size: 70px;
+	text-shadow: 2px 2px 3px black;
+}
+input.field
+{
+	position: relative;
+	left: 30px;
+	height: 40px;
+	width: 200px;
+	font-size:25px;
+	color:gray;
+	box-shadow: 2px 2px 3px black;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+input.field:hover
+{
+	border: 3px solid black;
+}
+input.field:focus
+{
+	border: 3px solid blue;
+	color:black;
+}
+input.button
+{
+	position: relative;
+	left: 50px;
+	width: 150px;
+    height: 40px;
+	border-radius: 25px;
+	font-size:25px;
+	box-shadow: 2px 2px 3px black;
+	border: 2px solid black;
+	background: -webkit-linear-gradient(#9999FF, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#9999FF, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#9999FF, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#9999FF, white); /* Standard syntax */
+}
+input.button:hover
+{
+	background: -webkit-linear-gradient(#8282DA, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#8282DA, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#8282DA, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#8282DA, white); /* Standard syntax */
+}
+input.button:active
+{
+	border: 3px solid black
+}
+p.warning
+{
+	border-radius: 10px;
+	border: 1px solid #CC3399;
+	color:#CC3399;
+	font-size:25px;
+	display:inline-block;
+	background-color:#F5D6EB;
+}

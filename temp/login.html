@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="login.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Pages</h1>
+	<div class="box">
+		<form action=./login.php method="post">
+			<input type="text" name="name" title="Username" value="Username" class="field" id="Username"><br><br>
+			<input type="password" name="password" title="Password" value="Password" class="field" id="Password"><br><br id="space">
+			<input type="submit" value="Login" class="button" id="submit">
+		</form>
+	</div>
+</body>
+<script>
+$(document).ready(function()
+{
+	$("#Password").attr("type","text");
+	var problem=0;
+	$("#Username").focus(function()
+	{
+		if($(this).val()=="Username")
+		{	
+			$(this).val("");
+		}
+	});
+	$("#Username").blur(function()
+	{
+		if($(this).val()=="")
+		{
+			$(this).val("Username");
+		}
+	});
+	$("#Password").focus(function()
+	{
+		if($(this).val()=="Password")
+		{	
+			$(this).val("");
+			$(this).attr("type","password");
+		}
+	});
+	$("#Password").blur(function()
+	{
+		if($(this).val()=="")
+		{
+			$(this).val("Password");
+			$(this).attr("type","text");
+		}
+		var str = $(this).val();
+		if(/^[a-zA-Z0-9]*$/.test(str) == false)
+		{
+			$(this).after($("<p></p>").text("Password cannot contain special characters").attr("class","warning"));
+			problem+=1;
+		}
+		else
+		{
+			$("p.warning").remove();
+			problem-=1;
+		}
+	});
+	$("form").submit(function()
+	{
+		if(problem>0)
+		{
+			return false;
+		}
+	});
+});
+</script>
+</html>
