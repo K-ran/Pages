@@ -9,9 +9,9 @@
     $servername = SERVERIP;
     $username = USER;
     $password = PASSWORD;
-
+    $database_name=DATABASE_NAME;
     // Create connection
-    $mysqli = new mysqli($servername, $username, $password,'ProjectPages');
+    $mysqli = new mysqli($servername, $username, $password,$database_name);
 
     // Check connection
     if ($mysqli->connect_errno) {

@@ -7,5 +7,8 @@ Classes.
 4)File name should be same as class name.
 5)Keep all the classes in  /php/classes
 
+Rules for javascript
+
+1)Use camelCase for identifiers.
 
 NOTICE: ENTER MORE STANDARDS AS YOU COME ACROSS NEW THINGS

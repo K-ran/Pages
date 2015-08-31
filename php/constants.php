@@ -12,4 +12,5 @@
     define("SERVERIP","127.0.0.1");
     define("USER","pagesuser");
     define("PASSWORD","password");
+    define("DATABASE_NAME","PagesTest1");
 ?>
