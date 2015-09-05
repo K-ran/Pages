@@ -11,7 +11,7 @@
     $password = PASSWORD;
 
     // Create connection
-    $mysqli = new mysqli($servername, $username, $password,'ProjectPages');
+    $mysqli = new mysqli($servername, $username, $password,'PagesTest1');
 
     // Check connection
     if ($mysqli->connect_errno) {
@@ -28,7 +28,7 @@
           $password=initial_filter($_POST['password']);
           $cnf_password=initial_filter($_POST['confirm_password']);
           $email=initial_filter($_POST['email']);
-
+          $dob = initial_filter($_POST['dob']);
           $error=false;
           if(empty($user_name)){
               $error=true;
@@ -88,19 +88,28 @@
               header("Location: ./registration_form.php");
               die("boom");
           }
-        $sql = "Insert into users (user_name,first_name,last_name,password,email) values
+
+          $gender='';
+          if($_POST['gender']=='male'){
+              $gender='m';
+          }
+          else $gender='f';
+
+        $sql = "Insert into users (user_name,first_name,last_name,password,email,dob,gender) values
         (
             '$user_name',
             '$first_name',
             '$last_name',
             '$password',
-            '$email'
+            '$email',
+            '$dob',
+            '$gender'
         )";
 
         if ($mysqli->query($sql) == TRUE) {
             echo "New record created successfully";
         } else {
-            echo "Error: " . $sql . "<br>" . $mysq->error;
+            echo "Error: " . $sql . "<br>" . $mysqli->error;
         }
       }
     $mysqli->close();
