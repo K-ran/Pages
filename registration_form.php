@@ -10,6 +10,21 @@
      */
 
 ?>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+$(function() {
+  $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd',
+                                minDate:'-120y',maxDate:0,
+                                changeMonth: true,
+                                changeYear: true,
+                                yearRange: '-120:+0'
+                                });
+});
+</script>
+
 </head>
 <body>
 <form action="./register.php" method="post">
@@ -25,6 +40,9 @@
     <? if(isset($_SESSION["err_password"])) echo $_SESSION["err_password"]; ?>
     Confirm Password: <input type="password" name="confirm_password"><br>
     <? if(isset($_SESSION["err_cnf_password"])) echo $_SESSION["err_cnf_password"]; ?>
+    DOB: <input type="text" id="datepicker" name="dob"><br>
+    <input type="radio" name="gender" value="female">Female<br>
+    <input type="radio" name="gender" value="male" checked>Male<br>
     <input type="submit">
     <?
     //Todo: Add cleanup for the $_Post error messages
