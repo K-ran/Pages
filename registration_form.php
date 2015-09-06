@@ -10,7 +10,7 @@
      */
 
 ?>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -43,6 +43,7 @@ $(function() {
     DOB: <input type="text" id="datepicker" name="dob"><br>
     <input type="radio" name="gender" value="female">Female<br>
     <input type="radio" name="gender" value="male" checked>Male<br>
+    <div class="g-recaptcha" data-sitekey="6LerYQwTAAAAAPGtZvfGRFjslEdTz9L5a2SKQQ29"></div>
     <input type="submit">
     <?
     //Todo: Add cleanup for the $_Post error messages

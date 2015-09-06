@@ -5,6 +5,7 @@
     //require("./redirect_header.php");
     require("./php/functions/validations.php");
     require("./php/constants.php");
+    require_once './vendor/autoload.php';
     session_start();
     $servername = SERVERIP;
     $username = USER;
@@ -22,6 +23,10 @@
     //Check if method is POST
     if ($_SERVER["REQUEST_METHOD"] == "POST")
       {
+          if(!isset($_POST['g-recaptcha-response'])){
+              $_SESSION['err_recaptcha_not_filled']="Please fill the recaptcha";
+              die("Captcha error");
+          }
           $user_name =initial_filter($_POST['user_name']);
           $first_name=initial_filter($_POST['first_name']);
           $last_name=initial_filter($_POST['last_name']);
@@ -30,13 +35,21 @@
           $email=initial_filter($_POST['email']);
           $dob = initial_filter($_POST['dob']);
           $error=false;
+          $secret="6LerYQwTAAAAAH7076pzcdA4rm6vr-8Lnz5zXcHC";
+          $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+          $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+          if ($resp->isSuccess()) {
+          } else {
+              $error = true;
+          }
+
           if(empty($user_name)){
               $error=true;
               $_SESSION["err_uname"]=ERR_EMPTY_INPUT;
           }
           else if(!ctype_alnum($user_name)){
                 $error=true;
-                 $_SESSION["err_uname"]=ERR_ONLY_ALPHANUM;
+                $_SESSION["err_uname"]=ERR_ONLY_ALPHANUM;
           }
 
           if(empty($first_name)){
