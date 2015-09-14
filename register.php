@@ -98,7 +98,7 @@
 
 
           if($error===true){
-              header("Location: ./registration_form.php");
+              header("Location: ./index.php");
               die("boom");
           }
 
