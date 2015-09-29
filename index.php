@@ -30,7 +30,7 @@
 				});
 		</script>
 	</head>
-	<body style="background-image:url('./resource/dk.jpg');background-size:cover">
+	<body style="background-image:url('./resource/background1.jpg');background-size:cover">
 	<!-- Header -->
 
 	<nav class="navbar navbar-inverse navbar-static-top">
@@ -45,7 +45,8 @@
 				<div class="form-group">
 					<input type="password" class="form-control" placeholder="Password" style="width:200px" name="password" ></input>
 				</div>
-				<button type="submit" class="btn btn-success">Login</button>
+				<button type="submit" class="btn btn-success">Login</button><br>
+				<? if(isset($_SESSION["err_password"])) echo $_SESSION["err_password"]; ?>
 			</form>
 
 		</div>
@@ -74,7 +75,6 @@
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control"  placeholder="Password" name="password">
-					<? if(isset($_SESSION["err_password"])) echo $_SESSION["err_password"]; ?>
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control"  placeholder="Confirm Password" name="confirm_password">

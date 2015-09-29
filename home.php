@@ -68,6 +68,7 @@
 		</div>
 		<div class="col-md-2"></div>
 		<div class="col-md-5" class="box">
+
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<ul class="nav nav-pills">
@@ -88,85 +89,9 @@
 				</div>
 			</div>
 
-            <div class="panel panel-default">
-				<div class="panel-heading">
-					<ul class="nav nav-pills">
-					<li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
-					</li>
-					<li>Username<br>Date</li>
-					</ul>
-				</div>
-				<div class="panel-body">Content</div>
-				<div class="panel-footer">
-					<ul class="nav nav-pills" style="display:inline">
-					<li style="display:inline"><a href="#">Likes <span class="glyphicon glyphicon-thumbs-up"></span></a>
-					</li>
-					<li style="display:inline"><a href="#">Comment</a>
-					</li>
-					<li class="navbar-right"><a href="#"><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
-					</ul>
-				</div>
-			</div>
 
-            <div class="panel panel-default">
-				<div class="panel-heading">
-					<ul class="nav nav-pills">
-					<li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
-					</li>
-					<li>Username<br>Date</li>
-					</ul>
-				</div>
-				<div class="panel-body">Content</div>
-				<div class="panel-footer">
-					<ul class="nav nav-pills" style="display:inline">
-					<li style="display:inline"><a href="#">Likes <span class="glyphicon glyphicon-thumbs-up"></span></a>
-					</li>
-					<li style="display:inline"><a href="#">Comment</a>
-					</li>
-					<li class="navbar-right"><a href="#"><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
-					</ul>
-				</div>
-			</div>
 
-            <div class="panel panel-default">
-				<div class="panel-heading">
-					<ul class="nav nav-pills">
-					<li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
-					</li>
-					<li>Username<br>Date</li>
-					</ul>
-				</div>
-				<div class="panel-body">Content</div>
-				<div class="panel-footer">
-					<ul class="nav nav-pills" style="display:inline">
-					<li style="display:inline"><a href="#">Likes <span class="glyphicon glyphicon-thumbs-up"></span></a>
-					</li>
-					<li style="display:inline"><a href="#">Comment</a>
-					</li>
-					<li class="navbar-right"><a href="#"><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
-					</ul>
-				</div>
-			</div>
 
-						<div class="panel panel-default">
-				<div class="panel-heading">
-					<ul class="nav nav-pills">
-					<li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
-					</li>
-					<li>Username<br>Date</li>
-					</ul>
-				</div>
-				<div class="panel-body">Content</div>
-				<div class="panel-footer">
-					<ul class="nav nav-pills" style="display:inline">
-					<li style="display:inline"><a href="#">Likes <span class="glyphicon glyphicon-thumbs-up"></span></a>
-					</li>
-					<li style="display:inline"><a href="#">Comment</a>
-					</li>
-					<li class="navbar-right"><a href="#"><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
-					</ul>
-				</div>
-			</div>
 		</div>
 		<div class="col-md-2"></div>
 	</div>
