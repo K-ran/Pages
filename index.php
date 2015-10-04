@@ -20,8 +20,6 @@
 		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-		<script src="./script/registeration.js" language="JavaScript" type="text/javascript" ></script>
-
 		<!-- function for datepicker -->
 		<script>
 				$(function() {
@@ -94,7 +92,7 @@
 				</div>
 				<div class="form-group">
 					<!-- User Name input  -->
-					<input type="text" class="form-control" ng-model="user.user_name" placeholder="Username" name="user_name" onblur="CheckMe(this)" id="user_name" pg-alphanumeric required>
+					<input type="text" class="form-control" ng-model="user.user_name" placeholder="Username" name="user_name" id="user_name" pg-alphanumeric required>
 					<div id="err_uname"><? if(isset($_SESSION["err_uname"])) echo $_SESSION["err_uname"]; ?></div>
 					<span ng-show="registrationForm.user_name.$touched ">
 						<div class="error">
@@ -107,7 +105,7 @@
 				</div>
 				<div class="form-group">
 					<!-- Email input -->
-					<input type="email" class="form-control"  placeholder="Email" ng-model="user.email" name="email" onblur="CheckMe(this)" id="email" required>
+					<input type="email" class="form-control"  placeholder="Email" ng-model="user.email" name="email" id="email" required>
 					<div id="err_email"><? if(isset($_SESSION["err_email"])) echo $_SESSION["err_email"]; ?></div>
 					<span ng-show="registrationForm.email.$touched ">
 						<div class="error">
@@ -162,8 +160,11 @@
 			</fieldset
 			</form>
 		</div>
-
-	<script src="./script/ngRegistrationApp.js"></script>
+	<!-- adding angular files -->
+	<script src="./script/angularApps.js"></script>
+	<script src="./script/angularControllers.js"></script>
+	<script src="./script/angularDirectives.js"></script>
+	<!-- adding angular files -->
     <?
 	    //Todo: Add cleanup for the $_Post error messages
 	    unset($_SESSION["err_name"]);

@@ -1,10 +1,8 @@
-var registrationApp = angular.module("registrationApp",[]);
 
-registrationApp.controller('registrationController',function($scope){
-});
+
 
 //check for alphabets
-registrationApp.directive('pgAlphabet', function() {
+angular.module('validationDirectives').directive('pgAlphabet', function() {
   return {
     require: 'ngModel',
     link: function(scope, elm, attrs, ctrl) {
@@ -26,7 +24,7 @@ registrationApp.directive('pgAlphabet', function() {
 });
 
 //check for alpha numeric
-registrationApp.directive('pgAlphanumeric', function() {
+angular.module('validationDirectives').directive('pgAlphanumeric', function() {
   return {
     require: 'ngModel',
     link: function(scope, elm, attrs, ctrl) {
@@ -47,8 +45,7 @@ registrationApp.directive('pgAlphanumeric', function() {
   };
 });
 
-//confirm pass page.
-registrationApp.directive('pgPasswordConfirm', function() {
+angular.module('validationDirectives').directive('pgPasswordConfirm', function() {
     return {
         require: "ngModel",
         link: function(scope, ele, att, ctrl) {
