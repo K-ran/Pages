@@ -1,13 +1,13 @@
 <?
     require("./constants.php");
-
+    $post=json_decode(file_get_contents('php://input'), true);
     //Kill the connection if some idot tries to prank with us.
-    if(isset($_GET["user_name"]))
-        if(!ctype_alnum($_GET["user_name"])){
+    if(isset($post["user_name"]))
+        if(!ctype_alnum($post["user_name"])){
             die("you idot");
         }
-    if(isset($_GET["email"]))
-        if(filter_var(($_GET["email"]), FILTER_VALIDATE_EMAIL) === false){
+    if(isset($post["email"]))
+        if(filter_var(($post["email"]), FILTER_VALIDATE_EMAIL) === false){
             die("you idot");
         }
     $servername = SERVERIP;
@@ -22,8 +22,8 @@
         printf("Connect failed: %s\n", $mysqli->connect_error);
         exit();
     }
-    if(isset($_GET["user_name"])){
-        $user_name=$_GET["user_name"];
+    if(isset($post["user_name"])){
+        $user_name=$post["user_name"];
         //Checking from database if Username/Password pair exists.
         $sql = "SELECT user_name FROM users where user_name='$user_name'";
         if ($result = $mysqli->query($sql)) {
@@ -34,8 +34,8 @@
                 echo "true";
         }
     }
-    else if(isset($_GET["email"])){
-        $email=$_GET["email"];
+    else if(isset($post["email"])){
+        $email=$post["email"];
         //Checking from database if Username/Password pair exists.
         $sql = "SELECT email FROM users where email='$email'";
         if ($result = $mysqli->query($sql)) {
@@ -45,7 +45,7 @@
             else
                 echo "true";
         }
-    }    
+    }
     $mysqli->close();
 
 

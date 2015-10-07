@@ -92,7 +92,7 @@
 				</div>
 				<div class="form-group">
 					<!-- User Name input  -->
-					<input type="text" class="form-control" ng-model="user.user_name" placeholder="Username" name="user_name" id="user_name" pg-alphanumeric required>
+					<input type="text" class="form-control" ng-model="user.user_name" placeholder="Username" name="user_name" id="user_name" pg-alphanumeric required pg-user-unique>
 					<div id="err_uname"><? if(isset($_SESSION["err_uname"])) echo $_SESSION["err_uname"]; ?></div>
 					<span ng-show="registrationForm.user_name.$touched ">
 						<div class="error">
@@ -101,11 +101,17 @@
 						<div class="error">
 							<div ng-show="registrationForm.user_name.$error.alphanumeric">Only alphanumeric allowed   </div>
 						</div>
+						<div class="error">
+							<div ng-show="registrationForm.user_name.$error.usernamevalid">User Name taken</div>
+						</div>
+						<div class="error">
+							<div ng-show="registrationForm.user_name.$pending.usernamevalid">Checking user name</div>
+						</div>
 					</span>
 				</div>
 				<div class="form-group">
 					<!-- Email input -->
-					<input type="email" class="form-control"  placeholder="Email" ng-model="user.email" name="email" id="email" required>
+					<input type="email" class="form-control"  placeholder="Email" ng-model="user.email" name="email" id="email" required pg-email-unique>
 					<div id="err_email"><? if(isset($_SESSION["err_email"])) echo $_SESSION["err_email"]; ?></div>
 					<span ng-show="registrationForm.email.$touched ">
 						<div class="error">
@@ -113,6 +119,12 @@
 						</div>
 						<div class="error">
 							<div ng-show="registrationForm.email.$error.email">Invalid Email   </div>
+						</div>
+						<div class="error">
+							<div ng-show="registrationForm.email.$error.emailvalid">Email already registered</div>
+						</div>
+						<div class="error">
+							<div ng-show="registrationForm.email.$pending.emailvalid">Checking available email</div>
 						</div>
 					</span>
 				</div>
@@ -153,7 +165,7 @@
 				</div>
 				<!-- Google Recaptche input -->
 				<div class="form-group">
-					<div class="g-recaptcha" data-sitekey="6LerYQwTAAAAAPGtZvfGRFjslEdTz9L5a2SKQQ29"></div>
+					<div class="g-recaptcha" data-sitekey="6LerYQwTAAAAAPGtZvfGRFjslEdTz9L5a2SKQQ29" style="transform:scale(0.8);"></div>
 				</div>
 				<!-- Submit Button -->
 				<center><button type="submit" ng-disabled="registrationForm.$invalid	" class="btn btn-danger">Submit</button></center>
@@ -164,6 +176,7 @@
 	<script src="./script/angularApps.js"></script>
 	<script src="./script/angularControllers.js"></script>
 	<script src="./script/angularDirectives.js"></script>
+	<script src="./script/angularServices.js"></script>
 	<!-- adding angular files -->
     <?
 	    //Todo: Add cleanup for the $_Post error messages
