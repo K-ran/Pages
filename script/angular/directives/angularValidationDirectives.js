@@ -2,6 +2,9 @@
 // This file containd all the directives create for pages
 // Please properly comment the directive, what the are used for and where in the site
 
+
+//-----------------------angular.module('validationDirectives')--------------------------//
+
 //check for alphabets | used in index.php
 angular.module('validationDirectives').directive('pgAlphabet', function() {
   return {
@@ -115,3 +118,6 @@ angular.module('validationDirectives').directive('pgEmailUnique', function($http
         }
     };
 });
+
+
+//-----------------------------------angular.module('homeApp')---------------------------//

@@ -20,6 +20,7 @@
 		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<!-- function for datepicker -->
 		<script>
 				$(function() {
@@ -173,10 +174,10 @@
 			</form>
 		</div>
 	<!-- adding angular files -->
-	<script src="./script/angularApps.js"></script>
-	<script src="./script/angularControllers.js"></script>
-	<script src="./script/angularDirectives.js"></script>
-	<script src="./script/angularServices.js"></script>
+	<script src="./script/angular/angularApps.js"></script>
+	<script src="./script/angular/controllers/angularControllers.js"></script>
+	<script src="./script/angular/directives/angularValidationDirectives.js"></script>
+	<script src="./script/angular/services/angularServices.js"></script>
 	<!-- adding angular files -->
     <?
 	    //Todo: Add cleanup for the $_Post error messages
