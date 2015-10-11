@@ -34,7 +34,8 @@
                           select post_id from likes where user_id=$user_id
                       )
                   )
-          ) and post_id not in (select post_id from read_posts where user_id=$user_id) order by time LIMIT 20";
+          ) and post_id not in (select post_id from read_posts where user_id=$user_id)
+          and not user_id =$user_id order by time LIMIT 20";
           if ($result = $mysqli->query($sql)) {
                 while ($row=$result->fetch_assoc()) {
                     if(!in_array($row,$rowarray))
@@ -61,7 +62,7 @@
                   select post_id from likes where user_id in (
                       select user_id2 from follows where user_id_follows=$user_id
                   )
-          ) and post_id not in (select post_id from read_posts where user_id=$user_id) order by time LIMIT 20";
+          ) and post_id not in (select post_id from read_posts where user_id=$user_id) and not user_id =$user_id order by time LIMIT 20";
           if ($result = $mysqli->query($sql)) {
                 while ($row=$result->fetch_assoc()) {
                     if(!in_array($row,$rowarray))
@@ -70,7 +71,7 @@
           }
 
         //   And finally no option other than displaying normal posts
-          $sql = "select * from posts where post_id not in (select post_id from read_posts where user_id=$user_id) order by time LIMIT 20";
+          $sql = "select * from posts where post_id not in (select post_id from read_posts where user_id=$user_id) and not user_id =$user_id order by time LIMIT 20";
           if ($result = $mysqli->query($sql)) {
                 while ($row=$result->fetch_assoc()) {
                     if(!in_array($row,$rowarray))

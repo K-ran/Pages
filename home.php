@@ -18,6 +18,7 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.1/ng-infinite-scroll.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/head.css">
 </head>
 
@@ -48,8 +49,8 @@
 		</div>
 	</nav>
 	<!--Header end-->
-	<div class="container">
-		<div class="col-md-3">
+	<div class="container" >
+		<div class="col-md-3" >
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="#">Top Trending</a></li>
 				<li><a href="#">Most Recent</a></li>
@@ -80,5 +81,7 @@
     <!-- angular and other user defined scripts here-->
     <script src="./script/angular/angularApps.js"></script>
     <script src="./script/angular/controllers/angularControllers.js"></script>
+    <script src="./script/angular/directives/boxDirective.js"></script>
+    <script src="./script/angular/services/angularServices.js"></script>
 </body>
 </html>

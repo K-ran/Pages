@@ -1,13 +1,14 @@
-<div class="box col-md-9">
+<div class="box col-md-9" ng-repeat="object in storyObjects">
     <div class="panel panel-default">
                 <div class="panel-heading">
                     <ul class="nav nav-pills">
                     <li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
                     </li>
-                    <li>Username<br>Date</li>
+                    <li>{{object.name}}<br>{{object.time}}</li>
                     </ul>
+                    <div class="text-center">{{object.topic}}</div>
                 </div>
-                <div class="panel-body">Content</div>
+                <div class="panel-body">{{object.content}}</div>
                 <div class="panel-footer">
                     <ul class="nav nav-pills" style="display:inline">
                     <li style="display:inline"><a href="#/">Likes <span class="glyphicon glyphicon-thumbs-up"></span></a>
