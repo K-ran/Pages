@@ -7,5 +7,12 @@ angular.module('homeApp').controller('boxController',['$scope','getData',functio
         $scope.storyObjects=data;
         console.log("Awesome");
     })
+
+    $scope.loadMoreStories= function(){
+        getData('./php/XHR/getposts.php',function(data){
+            for(var i=0;i<data.length;i++)
+            $scope.storyObjects.push(data[i]);
+        })
+    }
     $scope.test = "this is a test string";
 }]);

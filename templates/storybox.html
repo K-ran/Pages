@@ -1,5 +1,6 @@
-<div class="box col-md-9" ng-repeat="object in storyObjects">
-    <div class="panel panel-default">
+<div class="box col-md-9">
+    <div infinite-scroll="loadMoreStories()" infinite-scroll-distance='0'>
+    <div class="panel panel-default" ng-repeat="object in storyObjects">
                 <div class="panel-heading">
                     <ul class="nav nav-pills">
                     <li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
@@ -18,5 +19,6 @@
                     <li class="navbar-right"><a href="#/"><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
                     </ul>
                 </div>
+        </div>
     </div>
 </div>

@@ -1,7 +1,9 @@
 angular.module('validationDirectives',[]);
 angular.module('registrationApp',['validationDirectives']);
 
-angular.module('homeApp',['ngRoute']).config(['$routeProvider',
+angular.module('homeApp',['ngRoute','infinite-scroll']);
+
+angular.module('homeApp').config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
