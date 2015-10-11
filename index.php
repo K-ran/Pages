@@ -21,6 +21,7 @@
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="./css/head.css">
 		<!-- function for datepicker -->
 		<script>
 				$(function() {
@@ -36,7 +37,7 @@
 	<!-- Background image -->
 	<body style="background-image:url('./resource/background1.jpg');background-size:cover">
 	<!-- Header -->
-	<nav class="navbar navbar-inverse navbar-static-top">
+	<nav class="navbar navbar-inverse navbar-static-top pgHeader">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<p class="navbar-brand" href="#">Pages</p>

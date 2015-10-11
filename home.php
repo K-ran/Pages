@@ -18,7 +18,7 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="./css/head.css">
 </head>
 
 <body style="padding-top: 70px" ng-app="homeApp">
@@ -36,8 +36,8 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="#/read">Home</a></li>
 				<li><a href="#/write">Compose</a></li>
-				<li><a href="#">Profile Pic</a></li>
-				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"> <? echo $_SESSION['user']->first_name; ?> <span class="caret"></span></a>
+				<li><a href="#">Profile</a></li>
+				<li><a class="dropdown-toggle" data-toggle="dropdown" href=""> <? echo $_SESSION['user']->first_name; ?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Setting</a></li>
