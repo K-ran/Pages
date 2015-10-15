@@ -39,21 +39,26 @@
               die("special character");
           }
           //Checking from database if Username/Password pair exists.
-          $sql = "SELECT * FROM users where user_name='$db_name' and password='$db_pass'";
+          $sql = "SELECT * FROM users where user_name='$db_name'";
           if ($result = $mysqli->query($sql)) {
-              if ($row=$result->fetch_assoc()) {
-                  //start the session
-                  //make a session variable stiring a UserClass instance
-                  //with all the user information.
+                  $row=$result->fetch_assoc();
+                  $salt=$row["salt"];
+                  $password=crypt($db_pass,$salt);
+                  if($password==$row["password"]){
                   $_SESSION['user']=new UserClass();
                   $_SESSION['user']->load_info_from_db($row);
-              }
-              else {
-                  $_SESSION["err_password"]="Username/password pair don't match";
-                  header("Location: ./index.php");
-                  die("password/username incorect");
-              }
+                  }
+                  else {
+                      $_SESSION["err_password"]="Username/password pair don't match";
+                      header("Location: ./index.php");
+                      die("password/username incorect");
+                  }
               $result->close();
+          }
+          else  {
+              $_SESSION["err_password"]="User does not exist";
+              header("Location: ./index.php");
+              die("password/username incorect");
           }
     }
     $mysqli->close();

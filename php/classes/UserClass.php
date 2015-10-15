@@ -30,10 +30,6 @@
             $this->email=$row['email'];
             $this->cover_pic_url=$row['cover_pic'];
         }
-
-        public function register_user($connectio){
-
-        }
     }
 
 ?>

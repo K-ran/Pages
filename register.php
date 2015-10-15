@@ -108,7 +108,10 @@
           }
           else $gender='f';
 
-        $sql = "Insert into users (user_name,first_name,last_name,password,email,dob,gender) values
+          $salt=crypt("salt");
+          $password=crypt($password,$salt);
+
+        $sql = "Insert into users (user_name,first_name,last_name,password,email,dob,gender,salt) values
         (
             '$user_name',
             '$first_name',
@@ -116,7 +119,8 @@
             '$password',
             '$email',
             '$dob',
-            '$gender'
+            '$gender',
+            '$salt'
         )";
 
         if ($mysqli->query($sql) == TRUE) {
