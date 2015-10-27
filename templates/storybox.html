@@ -1,23 +1,36 @@
 <div class="box col-md-9">
     <div infinite-scroll="loadMoreStories()" infinite-scroll-distance='1'>
-    <div class="panel panel-default" ng-repeat="object in storyObjects" >
+    <div class="panel panel-default" id="topic-box" ng-repeat="object in storyObjects" >
                 <div class="panel-heading" ng-init="like=0">
-                    <ul class="nav nav-pills">
-                    <li><img class="img-responsive" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
+                    <ul class="nav nav-pills" style="font-family:Lucida Sans Unicode">
+                    <li><img class="img-circle" src="http://www.celebdetail.com/wp-content/uploads/2013/11/Katrina-Kaif-Boyfriend-age-Biography.jpg" alt="Chania" style="height:50px;width:50px" >
                     </li>
                     <li>{{object.name}}<br>{{object.time}}</li>
+                    <li>
+                    <div class="text-center" style="width:180px;font-weight:bold">{{object.topic}}</div>
+                    </li>
                     </ul>
-                    <div class="text-center">{{object.topic}}</div>
                 </div>
-                <div class="panel-body">{{object.content}}</div>
+                <div class="panel-body">
+                    <div ng-if="showDesc">{{object.description}}</div>
+                    <div ng-if="!showDesc">{{object.content}}</div>
+                </div>
                 <div class="panel-footer">
+                    <div class="btn-group btn-group-justified">
+                        <div class="btn-group" role="group">
+                            <a><button type="button" class="btn btn-default" id="read-more" ng-click="showDesc=!showDesc" ng-init="showDesc=1">
+                                            <div ng-if="showDesc">Read Compelete Stroy</div>
+                                            <div ng-if="!showDesc">Less</div>
+                                        </button></a>
+                        </div>
+                    </ul>
+                </div>
+                <div ng-if="!showDesc">
                     <ul class="nav nav-pills" style="display:inline">
                     <li style="display:inline" pg-like-check><a href="#/"><div ng-if="like==0">Likes</div><div ng-if="like==1">Dislikes </div></a>
                     </li>
                     <li style="display:inline"><a href="#/">Comment</a>
                     </li>
-                    <li class="navbar-right"><a href=""><button type="button" class="btn btn-primary btn-sm">Read More</button></a></li>
-                    </ul>
                 </div>
         </div>
     </div>

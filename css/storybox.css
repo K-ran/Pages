@@ -1,0 +1,37 @@
+#topic-box
+{
+    border:0px;
+}
+#topic-box .panel-footer
+{
+     padding:0px;
+     border:0px;
+}
+#topic-box .panel-heading
+{
+    background: -webkit-linear-gradient(#E9E9E9,#ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#E9E9E9,#ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#E9E9E9,#ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#E9E9E9,#ffffff); /* Standard syntax */
+    border:0px;
+}
+#read-more
+{
+  background: -webkit-linear-gradient(#FFFFFF,#E9E9E9); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFFFFF,#E9E9E9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFFFFF,#E9E9E9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FFFFFF,#E9E9E9); /* Standard syntax */
+  border:0px;
+}
+#read-more:visited
+{
+    border:0px;
+}
+#read-more:hover
+{
+    border:0px;
+}
+#read-more:active
+{
+    border:0px;
+}

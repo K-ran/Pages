@@ -34,7 +34,7 @@
             }
         }
         else {
-            $sql2="insert into likes values($user_id,$post_id)";
+            $sql2="insert into likes values($user_id,$post_id,CURRENT_TIMESTAMP())";
             if($mysqli->query($sql2)){
                 $mysqli->close();
                 die("true");

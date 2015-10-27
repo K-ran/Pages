@@ -14,12 +14,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/storybox.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.1/ng-infinite-scroll.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/head.css">
+    <script src="./script/storybox.js"></script>
+    <script src="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="./css/head.css">
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" /> -->
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
 </head>
 
 <body style="padding-top: 70px" ng-app="homeApp">
