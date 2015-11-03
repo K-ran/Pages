@@ -12,6 +12,7 @@ angular.module('homeApp').config(['$routeProvider',
       }).
       when('/write', {
         templateUrl: 'templates/writebox.html',
+        controller: 'writeController'
       }).
       when('/read', {
         templateUrl: 'templates/storybox.html',

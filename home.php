@@ -24,8 +24,6 @@
     <script src="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="./css/head.css">
     <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" /> -->
-    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
 </head>
 
@@ -77,7 +75,7 @@
 		</div>
 
         <div class="container Sheet col-md-9">
-            <div classs="row sheetcontent">
+            <div class="row sheetcontent">
                 <div ng-view>
                 <!-- All the content will be here -->
                 </div>
@@ -89,6 +87,7 @@
     <script src="./script/angular/angularApps.js"></script>
     <script src="./script/angular/controllers/angularControllers.js"></script>
     <script src="./script/angular/directives/boxDirective.js"></script>
+    <script src="./script/angular/directives/writeDirective.js"></script>
     <script src="./script/angular/services/angularServices.js"></script>
 </body>
 </html>

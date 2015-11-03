@@ -16,3 +16,8 @@ angular.module('homeApp').controller('boxController',['$scope','getData',functio
     }
     $scope.test = "this is a test string";
 }]);
+
+
+angular.module('homeApp').controller('writeController',function(){
+
+});
