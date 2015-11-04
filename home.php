@@ -30,27 +30,27 @@
 <body style="padding-top: 70px" ng-app="homeApp">
 	<!-- Header -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Pages</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
 			</div>
-			<div class="col-sm-6 col-md-6">
-					<form class="navbar-form" role="form">
-						<input type="text" class="form-control" placeholder="Search" style="width:300px"></input>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>	</form>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<form class="navbar-form navbar-left" role="search">
+					<input type="text" class="form-control" placeholder="Search"></input>
+					<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Compose</a></li>
+					<li><a href="#"> <? echo $_SESSION['user']->first_name; ?></a>
+					<li><a href="./logout.php">Logout</a></li>
+				</ul>
 			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="#/read">Home</a></li>
-				<li><a href="#/write">Compose</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a class="dropdown-toggle" data-toggle="dropdown" href=""> <? echo $_SESSION['user']->first_name; ?> <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Profile</a></li>
-						<li><a href="#">Setting</a></li>
-						<li><a href="./logout.php">Logout</a></li>
-					</ul>
-				</li>
-			</ul>
 		</div>
 	</nav>
 	<!--Header end-->
