@@ -60,17 +60,8 @@
 		<div class="col-md-3" >
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="#">Top Trending</a></li>
-				<li><a href="#">Most Recent</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Category-1</a></li>
-							<li><a href="#">Category-2</a></li>
-							<li><a href="#">Category-3</a></li>
-							<li><a href="#">Read more</a></li>
-						</ul>
-				</li>
-				<li><a href="#">Draft</a></li>
+				<li><a href="#/MostRecent">Most Recent</a></li>
+				<li><a href="#/MyStories">My Stories</a></li>
 				<li><a href="#">Followers</a></li>
 				<li><a href="#">Followings</a></li>
 			</ul>
@@ -91,5 +82,11 @@
     <script src="./script/angular/directives/boxDirective.js"></script>
     <script src="./script/angular/directives/writeDirective.js"></script>
     <script src="./script/angular/services/angularServices.js"></script>
+    <script>
+        $(".nav li").on("click", function() {
+          $(".nav li").removeClass("active");
+          $(this).addClass("active");
+        });
+    </script>
 </body>
 </html>

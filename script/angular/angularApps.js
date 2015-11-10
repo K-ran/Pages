@@ -18,6 +18,14 @@ angular.module('homeApp').config(['$routeProvider',
         templateUrl: 'templates/storybox.html',
         controller: 'boxController'
       }).
+      when('/MostRecent', {
+        templateUrl: 'templates/storybox.html',
+        controller: 'recentController'
+      }).
+      when('/MyStories', {
+        templateUrl: 'templates/storybox.html',
+        controller: 'boxController'
+      }).
       otherwise({
         redirectTo: '/'
       });
