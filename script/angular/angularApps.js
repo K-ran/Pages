@@ -1,7 +1,7 @@
 angular.module('validationDirectives',[]);
 angular.module('registrationApp',['validationDirectives']);
 
-angular.module('homeApp',['ngRoute','infinite-scroll']);
+angular.module('homeApp',['ngRoute','infinite-scroll','ngTagsInput']);
 
 angular.module('homeApp').config(['$routeProvider',
   function($routeProvider) {

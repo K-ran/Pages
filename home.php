@@ -22,8 +22,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.1/ng-infinite-scroll.js"></script>
     <script src="./script/storybox.js"></script>
     <script src="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="./css/head.css">
-    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.min.css"></script> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.css">
+    <!-- <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" />  -->
 
 </head>
 
@@ -36,7 +38,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
+					<span class="icon-bar"></span>
 				</button>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -45,8 +47,8 @@
 					<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Compose</a></li>
+					<li class="active"><a href="#/">Home</a></li>
+					<li><a href="#/write">Compose</a></li>
 					<li><a href="#"> <? echo $_SESSION['user']->first_name; ?></a>
 					<li><a href="./logout.php">Logout</a></li>
 				</ul>

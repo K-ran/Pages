@@ -4,7 +4,8 @@
             <textarea cols="50" rows="1" ng-model="title" placeholder="Title" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea>
             <textarea cols="50" rows="5" ng-model="description" placeholder="Description" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea>
             <textarea cols="50" rows="15" ng-model="content" placeholder="Content" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea>
-            <textarea cols="50" rows="1" ng-model="tags" placeholder="Tags" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea>
+            <!-- <textarea cols="50" rows="1" ng-model="tags" placeholder="Tags" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea> -->
+            <tags-input ng-model="tags" display-property="name"><auto-complete source="loadTags($query)"></auto-complete></tags-input>
             <button type="button" class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:left" pg-publish-button>Publish</button>
             <button type="button" class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:right" pg-save-button>Save as Draft</button>
         </div>

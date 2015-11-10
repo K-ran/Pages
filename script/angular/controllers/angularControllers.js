@@ -18,6 +18,8 @@ angular.module('homeApp').controller('boxController',['$scope','getData',functio
 }]);
 
 
-angular.module('homeApp').controller('writeController',function(){
-
-});
+angular.module('homeApp').controller('writeController',['$scope','$http',function($scope, $http){
+    $scope.loadTags = function(query) {
+        return $http.get('./php/XHR/gettags.php?query=' + query);
+    };
+}]);

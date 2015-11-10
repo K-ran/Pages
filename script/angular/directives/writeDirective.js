@@ -9,7 +9,7 @@ angular.module('homeApp').directive('pgPublishButton',function($http){
                     params: {title:scope.title,
                              description:scope.description,
                              content:scope.content,
-                             tags:scope.tags}
+                             tags:JSON.stringify(scope.tags)}
                  });
                  request.then(function(response){
                         if(response.data=="true"){
