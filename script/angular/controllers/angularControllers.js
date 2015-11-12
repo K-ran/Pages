@@ -52,10 +52,40 @@ angular.module('homeApp').controller('myStories',['$scope','getData',function($s
     })
 }]);
 
-angular.module('homeApp').controller('editBoxController',['$scope','$routeParams',function($scope, $routeParams){
+angular.module('homeApp').controller('editBoxController',['$scope','$routeParams','$http',function($scope, $routeParams,$http){
     $scope.object=JSON.parse($routeParams.object);
     $scope.title=$scope.object.topic;
     $scope.description=$scope.object.description;
     $scope.content=$scope.object.content;
+    console.log($scope.object.post_id);
+    var request = $http({
+        url: "./php/XHR/getedittags.php",
+        method: "GET",
+        params: {post_id:$scope.object.post_id }
+     });
+     request.then(function(response){
+            $scope.tags=response.data;
+     });
+     $scope.loadTags = function(query) {
+         return $http.get('./php/XHR/gettags.php?query=' + query);
+     };
     console.log($scope.object.content);
+    $scope.updatepost=function(){
+        var request = $http({
+            url: "./php/XHR/updatepost.php",
+            method: "GET",
+            params: {post_id:$scope.object.post_id,
+                     title:$scope.title,
+                     description:$scope.description,
+                     content:$scope.content,
+                     tags:JSON.stringify($scope.tags)}
+         });
+         request.then(function(response){
+                if(response.data=="true"){
+                    console.log("Posted successfully");
+                    $scope.posted=1;
+                }
+                else console.log(response.data);
+         });
+    }
 }]);

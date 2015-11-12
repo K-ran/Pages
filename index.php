@@ -13,8 +13,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Include all the scripts here -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<link rel="stylesheet" type="text/css" href="./css/head.css">
 		<!-- function for datepicker -->
@@ -173,17 +178,14 @@
 			 <img src="/resource/logo1.png" style="position:relative;left:150px;top:120px;" class="img-responsive" alt="Cinque Terre" width="304" height="236">
 		</div>
 	<!-- adding angular files -->
-	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
 	<script src="./script/angular/angularApps.js"></script>
 	<script src="./script/angular/controllers/angularControllers.js"></script>
 	<script src="./script/angular/directives/angularValidationDirectives.js"></script>
 	<script src="./script/angular/services/angularServices.js"></script>
 	<!-- adding angular files -->
 
-	<script src='https://www.google.com/recaptcha/api.js'></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
     <?
 	    //Todo: Add cleanup for the $_Post error messages
