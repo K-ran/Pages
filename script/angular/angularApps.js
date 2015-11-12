@@ -23,8 +23,12 @@ angular.module('homeApp').config(['$routeProvider',
         controller: 'recentController'
       }).
       when('/MyStories', {
-        templateUrl: 'templates/storybox.html',
-        controller: 'boxController'
+        templateUrl: 'templates/mystory.html',
+        controller: 'myStories'
+      }).
+      when('/editBox/:object?', {
+        templateUrl: 'templates/editbox.html',
+        controller: 'editBoxController'
       }).
       otherwise({
         redirectTo: '/'

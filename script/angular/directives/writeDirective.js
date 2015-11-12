@@ -2,7 +2,7 @@ angular.module('homeApp').directive('pgPublishButton',function($http){
     return{
         link: function(scope, element, attrs, ctrl){
             element.on("click",function(){
-                console.log("cool");
+                console.log(scope.posted);
                 var request = $http({
                     url: "./php/XHR/post.php",
                     method: "GET",
@@ -16,6 +16,9 @@ angular.module('homeApp').directive('pgPublishButton',function($http){
                             console.log("Posted successfully");
                         }
                         else console.log(response.data);
+                 });
+                 scope.$apply(function(){
+                   scope.posted=1;
                  });
             })
         }

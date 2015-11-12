@@ -8,17 +8,12 @@
 	        }
 		?>
 		<!-- fevicon -->
-		<link href="favicon.png" rel="icon" type="image/png" />
+		<link rel="shortcut icon" href="/fevicon.ico" />
 		<title>Welcome to Pages</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Include all the scripts here -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src='https://www.google.com/recaptcha/api.js'></script>
-		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./css/index.css">
 		<link rel="stylesheet" type="text/css" href="./css/head.css">
@@ -40,7 +35,7 @@
 	<nav class="navbar navbar-inverse navbar-static-top pgHeader">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<p class="navbar-brand" href="#">Pages</p>
+				<p class="navbar-brand" href="#"></p>
 			</div>
 			<form class="navbar-form navbar-right" role="form" action="./login.php" method="post">
 				<div class="form-group">
@@ -59,9 +54,9 @@
 
 	<!-- Registration form -->
 	<div class="container">
-		<div class="col-sm-4">
+		<div class="col-sm-2">
 		</div>
-		<div class="col-sm-4" ng-app="registrationApp">
+		<div class="col-sm-5" ng-app="registrationApp">
 			<form name="registrationForm" ng-controller="registrationController" action="./register.php" method="post" style="overflow:auto" novalidate>
 			<fieldset style="border:1px solid black;padding:20px; border-radius:5px;padding-top:0px;background-color:#F2F2F2;opacity:0.9">
 				<center><h1>Sign up</h1></center>
@@ -167,19 +162,29 @@
 				</div>
 				<!-- Google Recaptche input -->
 				<div class="form-group">
-					<div class="g-recaptcha" data-sitekey="6LerYQwTAAAAAPGtZvfGRFjslEdTz9L5a2SKQQ29" style="transform:scale(0.8);"></div>
+					<div class="g-recaptcha" data-sitekey="6LerYQwTAAAAAPGtZvfGRFjslEdTz9L5a2SKQQ29" ></div>
 				</div>
 				<!-- Submit Button -->
 				<center><button type="submit" ng-disabled="registrationForm.$invalid	" class="btn btn-danger">Submit</button></center>
 			</fieldset
 			</form>
 		</div>
+		<div class="col-sm-5">
+			 <img src="/resource/logo1.png" style="position:relative;left:150px;top:120px;" class="img-responsive" alt="Cinque Terre" width="304" height="236">
+		</div>
 	<!-- adding angular files -->
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src="./script/angular/angularApps.js"></script>
 	<script src="./script/angular/controllers/angularControllers.js"></script>
 	<script src="./script/angular/directives/angularValidationDirectives.js"></script>
 	<script src="./script/angular/services/angularServices.js"></script>
 	<!-- adding angular files -->
+
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <?
 	    //Todo: Add cleanup for the $_Post error messages
 	    unset($_SESSION["err_name"]);

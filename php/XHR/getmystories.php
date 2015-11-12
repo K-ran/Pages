@@ -1,4 +1,8 @@
 <?
+    // This file fetched the stories to be displayed on the user's fetched.
+    // This is a very primitive implementation of recommendation system using
+    // Just mysql quries.
+
     require("../constants.php");
     require("../classes/UserClass.php");
     session_start();
@@ -18,18 +22,18 @@
         printf("Connect failed: %s\n", $mysqli->connect_error);
         exit();
     }
+
     if ($_SERVER["REQUEST_METHOD"] == "GET")
       {
           $rowarray = array();
-          $query=$_GET["query"];
-          $sql="select * from tags where name like '$query%' LIMIT 5";
+          $sql="select * from posts where user_id=$user_id";
           if ($result = $mysqli->query($sql)) {
                 while ($row=$result->fetch_assoc()) {
                     if(!in_array($row,$rowarray))
                         $rowarray[]=$row;
                     }
           }
-          die(json_encode($rowarray));
+          echo json_encode($rowarray);
       }
-    $mysqli->close();
+      $mysqli->close();
 ?>
