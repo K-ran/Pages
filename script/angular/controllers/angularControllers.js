@@ -23,6 +23,24 @@ angular.module('homeApp').controller('writeController',['$scope','$http',functio
     $scope.loadTags = function(query) {
         return $http.get('./php/XHR/gettags.php?query=' + query);
     };
+    $scope.publish=function(a){
+        var request = $http({
+            url: "./php/XHR/post.php",
+            method: "GET",
+            params: {title:$scope.title,
+                     draft:a,
+                     description:$scope.description,
+                     content:$scope.content,
+                     tags:JSON.stringify($scope.tags)}
+         });
+         request.then(function(response){
+                if(response.data=="true"){
+                    console.log("Posted successfully");
+                    $scope.posted=1+a;
+                }
+                else console.log(response.data);
+         });
+    }
 }]);
 
 angular.module('homeApp').controller('recentController',['$scope','getData',function($scope,getData){

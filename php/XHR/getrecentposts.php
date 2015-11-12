@@ -26,7 +26,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET")
       {
           $rowarray = array();
-          $sql="select * from posts where not user_id=$user_id order by time desc LIMIT 100";
+          $sql="select * from posts where not user_id=$user_id and not draft=1 order by time desc LIMIT 100";
           if ($result = $mysqli->query($sql)) {
                 while ($row=$result->fetch_assoc()) {
                     if(!in_array($row,$rowarray))

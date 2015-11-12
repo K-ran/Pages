@@ -11,10 +11,7 @@
     $content=$_GET["content"];
     $tags_t=$_GET["tags"];
     $user_id=$_SESSION['user']->user_id;
-    $draft=0;
-    if(isset($_GET["draft"])){
-        $draft=1;
-    }
+    $draft=$_GET["draft"];
     $tags=json_decode($tags_t);
     $servername = SERVERIP;
     $username = USER;
@@ -38,7 +35,7 @@
                 $sql="select tag_id from tags where name='$name'";
                 if ($result = $mysqli->query($sql)) {
                       while ($row=$result->fetch_assoc()){
-                         $tag_id[]=$row["name"];
+                         $tag_ids[]=$row["tag_id"];
                       }
                   }
             }

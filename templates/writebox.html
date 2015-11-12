@@ -6,9 +6,16 @@
             <textarea cols="50" rows="15" ng-model="content" placeholder="Content" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea>
             <!-- <textarea cols="50" rows="1" ng-model="tags" placeholder="Tags" style="box-shadow:1px 1px 5px grey;width:100%;border-radius:3px;margin-bottom:5px;resize: none;"></textarea> -->
             <tags-input ng-model="tags" display-property="name"><auto-complete source="loadTags($query)"></auto-complete></tags-input>
-            <div ng-if="posted==0"><button type="button" class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:left" pg-publish-button>Publish</button></div>
-            <div ng-if="posted==0"><button type="button"  class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:right" pg-save-button>Save as Draft</button></div>
-            {{posted}}
+            <div ng-if="posted==0"><button type="button" class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:left" ng-click="publish(0)">Publish</button></div>
+            <div ng-if="posted==0"><button type="button"  class="btn btn-default" style="box-shadow:1px 1px 5px grey;float:right" ng-click="publish(1)">Save as Draft</button></div>
+            <div class="panel panel-success"  style="box-shadow:1px 1px 5px grey;" ng-if="posted!=1">
+                <div class="panel-body" ng-if="posted==1">
+                  <center>Posted Successfully</center>
+                </div>
+                <div class="panel-body" ng-if="posted==2">
+                  <center>Saved Successfully</center>
+                </div>
+            </div>
         </div>
     </div>
 </div>
