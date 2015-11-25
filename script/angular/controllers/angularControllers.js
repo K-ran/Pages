@@ -107,3 +107,50 @@ angular.module('homeApp').controller('editBoxController',['$scope','$routeParams
          });
     }
 }]);
+
+angular.module('homeApp').controller('infoController',['$scope','$http',function($scope,$http){
+    $scope.bunty=false;
+    $scope.bunty2=false;
+    $scope.editButtonLabel="Edit";
+    var request = $http({
+        url: "./php/XHR/getpersonalinfo.php",
+        method: "GET"
+     });
+     request.then(function(response){
+            var info = response.data;
+            console.log(response.data);
+            $scope.dob=info.dob;
+            $scope.first_name=info.first_name;
+            $scope.last_name=info.last_name;
+            $scope.about_me=info.about_me;
+            $scope.gender='m';
+     });
+    $scope.PersonalEditButton=function(){
+    	$scope.bunty=!$scope.bunty;
+        $scope.bunty2=!$scope.bunty2;
+    	if($scope.bunty==false){
+    		$scope.editButtonLabel="Edit";
+            console.log($scope.first_name);
+            var request = $http({
+                url: "./php/XHR/updatepersonalinfo.php",
+                method: "GET",
+                params: {
+                         dob:$scope.dob,
+                         first_name:$scope.first_name,
+                         last_name:$scope.last_name,
+                         gender:$scope.gender,
+                         about_me:$scope.about_me
+                         }
+             });
+             request.then(function(response){
+                    if(response.data=="true"){
+                        console.log(response.data);
+                        console.log("Updated successfully");
+                    }
+                    else console.log(response.data);
+             });
+    	}
+    	else $scope.editButtonLabel="Save";
+        console.log($scope.dob);
+    }
+}]);

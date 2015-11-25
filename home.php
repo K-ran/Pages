@@ -27,6 +27,19 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.min.css"></script> -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.0.0/ng-tags-input.css">
     <!-- <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" />  -->
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script>
+      $(function() {
+    				  $("#datepicker").datepicker({dateFormat: 'yy-mm-dd',
+    				                                minDate:'-120y',maxDate:0,
+    				                                changeMonth: true,
+    				                                changeYear: true,
+    				                                yearRange: '-120:+0'
+    				                                });
+    				});
+     </script>
+
 
 </head>
 
@@ -50,7 +63,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="#/">Home</a></li>
 					<li><a href="#/write">Compose</a></li>
-					<li><a href="#"> <? echo $_SESSION['user']->first_name; ?></a>
+					<li><a href="#/profile"> <? echo $_SESSION['user']->first_name; ?></a>
 					<li><a href="./logout.php">Logout</a></li>
 				</ul>
 			</div>

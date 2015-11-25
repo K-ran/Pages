@@ -30,6 +30,10 @@ angular.module('homeApp').config(['$routeProvider',
         templateUrl: 'templates/editbox.html',
         controller: 'editBoxController'
       }).
+      when('/profile', {
+        templateUrl: 'templates/profile.html',
+        controller: 'infoController'
+      }).
       otherwise({
         redirectTo: '/'
       });
