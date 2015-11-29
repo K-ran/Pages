@@ -17,7 +17,6 @@ angular.module('homeApp').controller('boxController',['$scope','getData',functio
     $scope.test = "this is a test string";
 }]);
 
-
 angular.module('homeApp').controller('writeController',['$scope','$http',function($scope, $http){
     $scope.posted=0;
     $scope.loadTags = function(query) {
@@ -126,6 +125,7 @@ angular.module('homeApp').controller('infoController',['$scope','$http',function
             $scope.gender='m';
      });
     $scope.PersonalEditButton=function(){
+        $scope.passheading="Change Password"
     	$scope.bunty=!$scope.bunty;
         $scope.bunty2=!$scope.bunty2;
     	if($scope.bunty==false){
@@ -153,4 +153,85 @@ angular.module('homeApp').controller('infoController',['$scope','$http',function
     	else $scope.editButtonLabel="Save";
         console.log($scope.dob);
     }
+
+    $scope.passwordChange=function(){
+        if($scope.confirmpassword!=$scope.newpassword)
+            return;
+        console.log("changing password");
+        var request = $http({
+            method: "post",
+            url: "../php/XHR/changepassword.php",
+            data: {
+                oldpassword:$scope.oldpassword,
+                newpassword:$scope.newpassword
+            }
+        });
+        request.then(function(response){
+            console.log(response.data);
+            if(response.data=="true"){
+                $scope.passheading="Passowrd changed";
+                $scope.newpassword="";
+                $scope.oldpassword="";
+                $scope.confirmpassword="";
+            }
+            else{
+                $scope.passheading="Somethings wrong";
+                $scope.newpassword="";
+                $scope.oldpassword="";
+                $scope.confirmpassword="";
+            }
+        });
+    }
+
+}]);
+
+angular.module('homeApp').controller('otherPersonController',['$scope','$http','$routeParams',function($scope, $http, $routeParams){
+    var info;
+    var request = $http({
+        url: "./php/XHR/getothersinfo.php",
+        method: "GET",
+        params: {id: $routeParams.id}
+     });
+     request.then(function(response){
+          info = response.data;
+          $scope.first_name=info.first_name;
+          $scope.last_name=info.last_name;
+          $scope.gender=info.gender;
+          $scope.dob=info.dob;
+          $scope.aboutme=info.about_me;
+          if(info.follow=="false")
+            $scope.followtext="Follow";
+          else  $scope.followtext="Unfollow";
+     });
+
+     $scope.followme=function(){
+     if(info.follow=="false"){
+         var request = $http({
+             url: "./php/XHR/follow.php",
+             method: "GET",
+             params: {id: $routeParams.id}
+          });
+          request.then(function(response){
+              console.log(response.data);
+              if(response.data=="true"){
+                  $scope.followtext="Unfollow";
+                  info.follow="true";
+              }
+          });
+      }
+      else {
+          var request = $http({
+              url: "./php/XHR/unfollow.php",
+              method: "GET",
+              params: {id: $routeParams.id}
+           });
+           request.then(function(response){
+               console.log(response.data);
+               if(response.data=="true"){
+                   $scope.followtext="follow";
+                   info.follow="false";
+               }
+           });
+      }
+     }
 }]);

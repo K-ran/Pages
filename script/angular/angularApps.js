@@ -30,6 +30,10 @@ angular.module('homeApp').config(['$routeProvider',
         templateUrl: 'templates/editbox.html',
         controller: 'editBoxController'
       }).
+      when('/person/:id', {
+        templateUrl: 'templates/others_profile.html',
+        controller: 'otherPersonController'
+      }).
       when('/profile', {
         templateUrl: 'templates/profile.html',
         controller: 'infoController'

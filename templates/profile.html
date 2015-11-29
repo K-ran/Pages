@@ -54,17 +54,17 @@
 			<form>
 				<div class="form-group">
 					<label for="Old Password">Old Password</label>
-					<input type="password" class="form-control" placeholder="Old Password">
+					<input type="password" class="form-control" ng-model="oldpassword" placeholder="Old Password">
 				</div>
 				<div class="form-group">
 					<label for="New Password">New Password</label>
-					<input type="password" class="form-control" placeholder="New Password">
+					<input type="password" class="form-control" ng-model="newpassword" placeholder="New Password">
 				</div>
 				<div class="form-group">
 					<label for="Confirm Password">Confirm Password</label>
-					<input type="password" class="form-control" placeholder="Confirm Password">
+					<input type="password" class="form-control" ng-model="confirmpassword" placeholder="Confirm Password">
 				</div>
-				<button type="submit" class="btn btn-default">Change Password</button>
+				<button type="submit" class="btn btn-default" ng-click="passwordChange()">Change Password</button>
 			</form>
 		</div>
 	</div>
